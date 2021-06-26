@@ -35,10 +35,18 @@ Most likely the problem is with setting the environment variables.
 On Windows :
             To run the code in development mode use the following command
 > $env:FLASK_ENV="development"  
+
+
 OR 
+
+
 > set FLASK_ENV="development"
+
             To enable debugging
+
 > $env:FLASK_DEBUG=1
+
             To disable debugging
+
 > $env:FLASK_DEBUG=0
 
