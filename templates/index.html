@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Screener</title>
+    <style>
+        body {font-family: arial;margin: 20px;}
+        td { padding: 10px;}
+        .bullish {background: green; color: white;}
+        .bearish {background: red; color: white;}
+    </style>
+</head>
+<body>
+    <h1>Technical Screener</h1>
+
+    <form>
+        <select name="pattern">
+            {% for pattern in patterns %}
+            <option value={{pattern}} {% if pattern == current_pattern %} selected="selected" {% endif %}>{{ patterns[pattern] }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Scan"/>
+    </form>
+
+    <table>
+        <tr>
+            <th>
+                Symbol
+            </th>
+            <th>
+                Company Name
+            </th>
+            <th>
+                Signal
+            </th>
+        </tr>
+        {% for stock in stocks %}
+            {% if stocks[stock][current_pattern] %}
+            <tr>
+                <td>{{ stock }}</td>
+                <td>{{ stocks[stock]['company'] }}</td>
+                <td class="{{ stocks[stock][current_pattern] }}">{{ stocks[stock][current_pattern] }}</td>
+            </tr>
+                
+                
+            {% endif %}
+        {% endfor %}
+    </table>
+    
+</body>
+</html>
