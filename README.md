@@ -24,7 +24,9 @@ The dataset contains daily data on all the companies listed on NSE for a period 
 ### HOW TO RUN
 
 1. First start the flask server using command 
-        > flask run
+
+> flask run
+
 2. Open localhost:5000 in your browser of choice.
 
 #### Difficulties while running flask server
@@ -32,9 +34,11 @@ The dataset contains daily data on all the companies listed on NSE for a period 
 Most likely the problem is with setting the environment variables.
 On Windows :
             To run the code in development mode use the following command
-                > $env:FLASK_ENV="development"  OR > set FLASK_ENV="development"
+> $env:FLASK_ENV="development"  
+OR 
+> set FLASK_ENV="development"
             To enable debugging
-                > $env:FLASK_DEBUG=1
+> $env:FLASK_DEBUG=1
             To disable debugging
-                > $env:FLASK_DEBUG=0
+> $env:FLASK_DEBUG=0
 
